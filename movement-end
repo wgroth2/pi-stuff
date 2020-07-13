@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "local.movement.livingroom 0 `date '+%s'`" | nc -q0 192.168.86.19  2003
+python /home/pi/bin/led-off.py
+logger motion-end
