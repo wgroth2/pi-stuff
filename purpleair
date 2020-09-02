@@ -1,0 +1,5 @@
+
+#!/bin/bash
+ts=`date '+%s'`
+A=`curl --silent --request GET 'https://www.purpleair.com/json?key=LWNB69ZWLY1NJOD3&show=60663' | jq '.results[0].PM2_5Value' | sed 's/\"//g'i`
+echo "weather.air_quality.glenwood.2_5.0" $A  $ts
