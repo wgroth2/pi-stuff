@@ -115,6 +115,9 @@ def print_output():
 
 def calc_aqi(inp):
   x = float(inp)
+  #
+  # attempted curve fit of AQI functoin. negative exponential based on https://www.airnow.gov/aqi/aqi-calculator/
+  #
   ret = (0.0001 * x**3) - (0.0359 * x**2) + (4.1951*x)
   return ret
   
