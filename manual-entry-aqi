@@ -1,0 +1,5 @@
+#/bin/bash
+ts=`date '+%s'`
+
+echo "weather.air_quality.glenwood.results.web_value" $1 $ts
+echo "weather.air_quality.glenwood.results.web_value" $1 $ts | nc -q0 bill-bhyve.local 2003
