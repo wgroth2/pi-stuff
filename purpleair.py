@@ -108,7 +108,6 @@ def print_output():
   print('weather.air_quality.glenwood.results.0.calc_pm25aqi_um ' + str(int(round(aqi))) + ' ' + sepochtime)
   aqi = calc_aqi(pm2_5_cf_1)
   print('weather.air_quality.glenwood.results.0.calc_pm25aqi_cf_1 ' + str(int(round(aqi))) + ' ' + sepochtime)
- 
    
   syslog.syslog('Air Quality logged at ' + sepochtime)
   f.close()
@@ -118,7 +117,7 @@ def calc_aqi(inp):
   #
   # attempted curve fit of AQI functoin. negative exponential based on https://www.airnow.gov/aqi/aqi-calculator/
   #
-  ret = (0.0001 * x**3) - (0.0359 * x**2) + (4.1951*x)
+  ret = (-3E-13 * x**6) + (8E-10 * x**5) - (6E-07 * x**4) + (0.0002 * x**3) - (0.0434 * x**2) + (4.2234*x) + 1.2597
   return ret
   
 print_output()
