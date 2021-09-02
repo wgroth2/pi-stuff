@@ -1,0 +1,14 @@
+#!/bin/bash
+logger "movimg start"
+cd /tmp
+
+/bin/cp -f $1 image.jpg
+
+ftp -inv ftp.billroth.net <<EOF
+user webcam@billroth.net emmaroth12
+passive
+mput image.jpg
+bye
+EOF
+
+logger "movimg end"
