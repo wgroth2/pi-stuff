@@ -5,7 +5,7 @@ cd /tmp
 /bin/cp -f $1 image.jpg
 
 ftp -inv ftp.billroth.net <<EOF
-user webcam@billroth.net emmaroth12
+user webcam@billroth.net BLOCK
 passive
 mput image.jpg
 bye
