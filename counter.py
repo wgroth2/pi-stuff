@@ -11,7 +11,7 @@ from influxdb_client import InfluxDBClient
 
 counts = deque()
 gPrint = True
-usvh_factor = 1.0/151.0
+usvh_factor = 1.0/151.0  # this is the factor for the J305, ie number of clicks that indicates 1 microsievert, ie 1 click=1/151 of a microsievert
 gClient = None
 gWriteApi = None
 
@@ -39,7 +39,7 @@ def setup():
 def sendDataPoint(p):
     '''send datapoint to the database'''
     global gWriteApi
-    gWriteApi.write("radiation", "cottle",p)
+    gWriteApi.write("bucket", "org-name",p)
 
     return
 
