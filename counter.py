@@ -1,3 +1,7 @@
+#
+# By Bill Roth, but I heavily used this as a reference. https://github.com/chrisys/background-radiation-monitor/blob/master/counter/counter.py
+#
+
 import time
 import RPi.GPIO as GPIO
 import datetime
