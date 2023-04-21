@@ -18,7 +18,7 @@ from influxdb_client import InfluxDBClient
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 def write_measurement(measurements : list):
-    client = InfluxDBClient(url="http://192.168.86.64:9998", token='mnJXTd770BwNKuVppP5sz5a1AxMT_NkAJR61qw3E1HVqCBMievv2a3VUsAT_A9RpTlfUVf1OOZi9PGIlCR4RzA==', org='cottle')
+    client = InfluxDBClient(url="http://192.168.0.1:9998", token='CODE==', org='cottle')
     write = client.write_api(write_options=SYNCHRONOUS)
     try:
         res = write.write(bucket="air", org="cottle", record=measurements,write_precision="s")
@@ -39,9 +39,9 @@ def print_output():
   #
   # 
 
-  key= {'X-API-Key' : 'F4769DAA-EB47-11EC-8561-42010A800005'}
+  key= {'X-API-Key' : 'CODE'}
   try:
-    response = requests.get('https://api.purpleair.com/v1/sensors/60663', headers=key)
+    response = requests.get('https://api.purpleair.com/v1/sensors/60664', headers=key)
   except Exception as e:
     print(e)
     sys.exit(1)
